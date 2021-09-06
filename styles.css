@@ -1,0 +1,37 @@
+#title {
+  text-align: center;
+}
+
+#btn-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal {
+  margin-top: 200px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#waiting {
+  display: none;
+}
+
+#results {
+  display: none;
+}
+
+.results-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#image {
+  height: 300px;
+}

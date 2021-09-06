@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Best Car Game</title>
+  </head>
+  <body>
+    <h1 id="title">Did you want to pick a car?</h1>
+    <div id="btn-cta">
+      <button id="btn">Pick me!</button>
+      <div class="ui modal" id="modal">
+        <i class="close icon" id="closeMe"></i>
+        <div class="header">Car Details</div>
+
+        <div class="ui form">
+          <div class="grouped fields">
+            <label>What Kind of Car do you like?</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carType"
+                  checked="checked"
+                  value="2-door"
+                  onclick="carTypeValues()"
+                />
+                <label>2-Door! Livin life!</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carType"
+                  onclick="carTypeValues()"
+                  value="4-door"
+                />
+                <label>4-door! Family first!</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carType"
+                  value="3-door"
+                  onclick="carTypeValues()"
+                />
+                <label>Truck life 3-seater</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carType"
+                  value="bike"
+                  onclick="carTypeValues()"
+                />
+                <label>I'm on a bike</label>
+              </div>
+            </div>
+          </div>
+          <div class="grouped fields">
+            <label>What Color are you into?</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carColors"
+                  checked="checked"
+                  value="4-door"
+                  onclick="carColorValues()"
+                />
+                <label>Blue</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carColors"
+                  onclick="carColorValues()"
+                  value="Red"
+                />
+                <label>Red</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carColors"
+                  onclick="carColorValues()"
+                  value="Black"
+                />
+                <label>Black</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carColors"
+                  onclick="carColorValues()"
+                  value="Gray"
+                />
+                <label>Gray</label>
+              </div>
+            </div>
+          </div>
+          <div class="grouped fields">
+            <label>Favorite Model Year?</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carModels"
+                  checked="checked"
+                  value="1969"
+                  onclick="getYearModel()"
+                />
+                <label>1969</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carModels"
+                  onclick="getYearModel()"
+                  value="2002"
+                />
+                <label>2002</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carModels"
+                  onclick="getYearModel()"
+                  value="2021"
+                />
+                <label>2021</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="carModels"
+                  onclick="getYearModel()"
+                  value="1920"
+                />
+                <label>1920</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui black deny button" id="cancel">Cancel</div>
+          <div class="ui positive right labeled icon button" id="submit">
+            Submit
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <div id="waiting">Waiting Here  . . .</div>
+
+      <div id="results">
+        <div id="car-image">
+          <img src="" alt="car" id="image"/>
+        </div>
+        <div id="car-details">
+          <h2>Car Details</h2>
+          <!-- <p>
+            <strong>Make:</strong>
+            <span id="make"></span>
+          </p> -->
+          <p>
+            <strong>Model:</strong>
+            <span id="model"></span>
+          </p>
+          <p>
+            <strong>Year:</strong>
+            <span id="year"></span>
+          </p>
+          <p>
+            <strong>Color:</strong>
+            <span id="color"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+      integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
