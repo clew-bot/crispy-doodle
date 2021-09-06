@@ -28,7 +28,6 @@ const showModal = () => {
   const modal = document.getElementById("modal");
   modal.style.display = "block";
 };
-pickMeBtn.addEventListener("click", showModal);
 
 const carTypeValues = () => {
   for (let i = 0; i < getCarTypeValue.length; i++) {
@@ -89,7 +88,7 @@ const submitted = () => {
     color.innerHTML = userCar.make;
   }, 3000);
 };
-
+pickMeBtn.addEventListener("click", showModal);
 cancelBtn.addEventListener("click", closeModal);
 close.addEventListener("click", closeModal);
 submitBtn.addEventListener("click", submitted);
